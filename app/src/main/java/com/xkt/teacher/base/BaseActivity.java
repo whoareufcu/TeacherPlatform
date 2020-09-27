@@ -3,6 +3,7 @@ package com.xkt.teacher.base;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,6 +49,10 @@ public abstract class BaseActivity extends AppCompatActivity
      */
     protected abstract void initView();
 
+    protected View getId(int id){
+        return findViewById(id);
+    }
+
     /**
      * 初始化数据
      */
@@ -60,6 +65,10 @@ public abstract class BaseActivity extends AppCompatActivity
         if (getLayoutId() > 0) {
             setContentView(getLayoutId());
             initSoftKeyboard();
+            //强制横屏
+            if(getRequestedOrientation()!=ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE){
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+            }
         }
     }
 
@@ -70,6 +79,8 @@ public abstract class BaseActivity extends AppCompatActivity
         // 点击外部隐藏软键盘，提升用户体验
         getContentView().setOnClickListener(v -> hideSoftKeyboard());
     }
+
+
 
     @Override
     protected void onDestroy() {

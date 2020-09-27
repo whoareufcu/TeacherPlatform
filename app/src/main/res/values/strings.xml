@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">TeacherPlatform</string>
+    <string name="home_nav_classroom">课堂中心</string>
+    <string name="home_nav_exam">考试中心</string>
+    <string name="home_nav_work">作业中心</string>
+    <string name="home_nav_me">个人中心</string>
+
+    <string name="common_loading">加载中&#8230;</string>
+
+    <string name="home_exit_hint">再按一次退出</string>
 </resources>
