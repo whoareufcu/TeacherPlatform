@@ -101,10 +101,10 @@ public abstract class MyFragment<A extends MyActivity> extends BaseFragment<A>
     /**
      * 显示加载对话框
      */
-    public void showDialog() {
+    public void showDialog(String msg) {
         A activity = getAttachActivity();
         if (activity != null) {
-            activity.showDialog();
+            activity.showDialog(msg);
         }
     }
 

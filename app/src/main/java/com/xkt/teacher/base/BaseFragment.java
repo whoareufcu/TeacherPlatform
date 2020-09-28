@@ -60,7 +60,9 @@ public abstract class BaseFragment<A extends BaseActivity> extends Fragment impl
             return null;
         }
     }
-
+    protected View getId(int id){
+        return findViewById(id);
+    }
     @Override
     public void onDestroyView() {
         mLoading = false;

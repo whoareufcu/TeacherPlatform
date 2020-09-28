@@ -45,12 +45,13 @@ public abstract class MyActivity extends BaseActivity implements SwipeAction, Ti
     /**
      * 显示加载对话框
      */
-    public void showDialog() {
+    public void showDialog(String msg) {
         mDialogTotal++;
         postDelayed(() -> {
             if (mDialogTotal > 0 && !isFinishing()) {
                 if (mDialog == null) {
                     mDialog = new WaitDialog.Builder(this)
+                            .setMessage(msg)
                             .setCancelable(false)
                             .create();
                 }
